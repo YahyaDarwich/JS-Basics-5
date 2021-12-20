@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="guessing-game" />
+    <button onclick="chech_guessing()">chech</button>
+    <p id="output"></p>
+  </body>
+  <script>
+    const num = Math.floor(Math.random() * 100);
+    console.log(num);
+    var count = 0;
+    function chech_guessing() {
+      count++;
+      var player_num = document.getElementById("guessing-game").value;
+      if (player_num >= 1 && player_num <= 100) {
+        for (var i = 1; i <= 8; i++) {
+          if (player_num > num && count<=8) {
+            document.getElementById("output").innerHTML =
+              "too large trial " + count + "/8";
+            break;
+          } else if (player_num < num && count<=8) {
+            document.getElementById("output").innerHTML =
+              "too small trial " + count + "/8";
+            break;
+          } else if (player_num == num && count<=8) {
+            document.getElementById("output").innerHTML =
+              "Correct with " + count + " trials!";
+            break;
+          } else if(count > 8) {
+            alert(
+              "cannot complete, you don't have trial! Refresh the page and try again"
+            );
+            count = 0;
+            break;
+          }
+        }
+      } else {
+        alert("Enter a number between 1 and 100 only!");
+        count = count - 1;
+      }
+    }
+  </script>
+</html>
