@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="value" />
+    <button onclick="sum()">Sum</button>
+    <button onclick="multiple()">Multiple</button>
+    <script>
+      var num = document.getElementById("value").value;
+      function sum() {
+        var num = document.getElementById("value").value;
+        var i = 1,
+          sum = 0;
+        for (i = 1; i <= num; i++) {
+          sum += i;
+        }
+        alert(sum);
+      }
+      function multiple() {
+        var num = document.getElementById("value").value;
+        var i = 1,
+          multiple = 1;
+        for (i = 1; i <= num; i++) {
+          multiple *= i;
+        }
+        alert(multiple);
+      }
+    </script>
+  </body>
+</html>
